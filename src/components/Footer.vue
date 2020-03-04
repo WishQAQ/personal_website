@@ -5,7 +5,7 @@
       <div class="footer_record_number"></div>
     </div>
     <div class="footer_right">
-      <div class="footer_address">中国 重庆</div>
+      <div class="footer_address">Chongqing, China</div>
     </div>
   </div>
 </template>

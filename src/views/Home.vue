@@ -30,8 +30,8 @@
           '嗨...',
           '欢迎访问我的网站',
           '对，你没有看错，这是一个虚假的Google首页',
-          '我叫吴军龙，是一个前端开发攻城狮',
-          '如果你遇到一个叫Wish的ID也有可能是我',
+          '我叫吴军龙，如果你遇到一个ID叫Wish的也有可能是我',
+          '我的职业是前端开发攻城狮',
           '...',
           '你还在看吗？',
           '现在你可以点击右上角的简历或菜单了解更多关于我的事情'
@@ -43,7 +43,7 @@
       }
     },
     methods:{
-      onTyped(val){  // 输入完成回调 返回当前输入字符串
+      onTyped(val){
         // console.log(val);
       },
       onErased(val){
@@ -61,7 +61,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding-top: 4%;
     flex-direction: column;
     .logo{
       width: 300px;
