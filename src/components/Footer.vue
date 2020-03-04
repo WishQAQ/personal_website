@@ -2,7 +2,9 @@
   <div class="footer">
     <div class="footer_left">
       <div @click="jumpResume()" class="jump_button footer_contact">Contact</div>
-      <div class="footer_record_number"></div>
+      <a class="footer_record_number" href="http://www.beian.miit.gov.cn/" target="_blank">
+        ICP备案号
+      </a>
     </div>
     <div class="footer_right">
       <div class="footer_address">Chongqing, China</div>
@@ -34,6 +36,8 @@
     color: #5f6368;
     font-size: 13px;
     .footer_left{
+      display: flex;
+      align-items: center;
       >*:not(:last-child){
         margin-right: 15px;
       }
@@ -42,6 +46,9 @@
         &:hover{
           opacity: unset;
         }
+      }
+      .footer_record_number{
+        color: #5f6368;
       }
       .footer_record_number{
 
