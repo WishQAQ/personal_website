@@ -34,12 +34,12 @@
     justify-content: space-between;
     height: 100%;
     color: #5f6368;
-    font-size: 13px;
+    font-size: 0.8125rem;
     .footer_left{
       display: flex;
       align-items: center;
       >*:not(:last-child){
-        margin-right: 15px;
+        margin-right: 0.9375rem;
       }
       .footer_contact{
         color: unset;

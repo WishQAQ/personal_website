@@ -51,16 +51,16 @@
       margin-left: auto;
       display: flex;
       align-items: center;
-      font-size: 13px;
+      font-size: 0.8125rem;
       >*:not(:last-child){
-        margin-right: 15px;
+        margin-right: 0.9375rem;
       }
       /*菜单按钮*/
       .nav_menu_button{
         background: url("../assets/menubutton.png") center center no-repeat;
-        width: 22px;
-        height: 22px;
-        padding: 2px;
+        width: 1.375rem;
+        height: 1.375rem;
+        padding: 0.125rem;
         object-fit: contain;
         position: relative;
         cursor: pointer;
@@ -84,13 +84,13 @@
       .contact_button{
         background: #4285f4;
         color: #fff;
-        height: 30px;
-        padding: 0 13px;
+        height: 1.875rem;
+        padding: 0 0.8125rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        border-radius: 2px;
+        border-radius: 0.125rem;
       }
     }
   }

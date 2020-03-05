@@ -61,25 +61,25 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding-top: 4%;
+    padding-top: 6.25rem;
     flex-direction: column;
     .logo{
-      width: 300px;
+      width: 18.75rem;
       object-fit: contain;
     }
     .input_box{
-      min-height: 44px;
-      max-width: 582px;
+      min-height: 2.75rem;
+      max-width: 36.375rem;
       width: 100%;
       display: flex;
       align-items: center;
-      padding: 0 16px;
-      margin-top: 10px;
+      padding: 0 1rem;
+      margin-top: 0.625rem;
       border: 1px solid #dfe1e5;
-      border-radius: 24px;
+      border-radius: 1.5rem;
       transition: all .3s;
       &:hover{
-        box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+        box-shadow: 0 0.0625rem 0.375rem 0 rgba(32,33,36,0.28);
         border-color: rgba(223,225,229,0);
       }
       &::before{
@@ -87,11 +87,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 20px;
-        width: 20px;
+        height: 1.25rem;
+        width: 1.25rem;
         background: url("../assets/serach.svg") no-repeat;
         object-fit: contain;
-        margin-right: 13px;
+        margin-right: 0.8125rem;
         flex-shrink: 0;
       }
 
