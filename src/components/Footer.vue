@@ -50,9 +50,6 @@
       .footer_record_number{
         color: #5f6368;
       }
-      .footer_record_number{
-
-      }
     }
   }
 </style>
