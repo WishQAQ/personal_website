@@ -9,11 +9,15 @@
       </el-tooltip>
       <!-- 菜单盒子 -->
       <el-popover
+        popper-class="nav_menu_popper"
         placement="bottom"
         trigger="click">
-          <div class="nav_menu_button" slot="reference">
-          </div>
+          <div class="nav_menu_button" slot="reference"></div>
+          <div class="nav_menu_list">
+            <div class="nav_box" @click="jumpNavPage()">Minecraft</div>
 
+
+          </div>
       </el-popover>
       <!-- 联系按钮 -->
       <el-tooltip class="item" effect="dark" content="联系我" placement="bottom">
@@ -34,6 +38,15 @@
           iconClass: 'el-icon-truck',
           duration: 1000
         })
+      },
+
+      /**
+       * @Description: 详情盒子页面跳转
+       * @author Wish
+       * @date 2020/3/9
+      */
+      jumpNavPage(){
+        this.$router.push('/minecraft')
       },
     }
   }
@@ -91,6 +104,36 @@
         justify-content: center;
         cursor: pointer;
         border-radius: 0.125rem;
+      }
+    }
+  }
+  /* 菜单盒子 */
+  .nav_menu_popper{
+    .nav_menu_list{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      &:not(:nth-child(3n)){
+        margin-right: 10px;
+      }
+      .nav_box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 65px;
+        height: 65px;
+        font-size: 12px;
+        text-align: center;
+        &:before{
+          content: '';
+          display: block;
+          background: url("../assets/minecraft.svg") no-repeat 100% 100%;
+          object-fit: contain;
+          width: 30px;
+          height: 30px;
+          margin: 0 auto 5px;
+        }
       }
     }
   }
