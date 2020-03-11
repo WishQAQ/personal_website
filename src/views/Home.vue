@@ -44,7 +44,7 @@
     },
     methods:{
       onTyped(val){
-        // console.log(val);
+        console.log(val);
       },
       onErased(val){
         // console.log(val);

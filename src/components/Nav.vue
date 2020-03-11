@@ -14,7 +14,7 @@
         trigger="click">
           <div class="nav_menu_button" slot="reference"></div>
           <div class="nav_menu_list">
-            <div class="nav_box" @click="jumpNavPage()">Minecraft</div>
+            <div class="nav_box" @click="jumpNavPage()"><img src="../assets/minecraft.png" alt="">Minecraft</div>
 
 
           </div>
@@ -33,6 +33,7 @@
     name: "Nav",
     methods:{
       jumpResume(){  // 跳转简历页面
+        console.log('111');
         this.$message({
           message: '全力施工中，敬请期待',
           iconClass: 'el-icon-truck',
@@ -125,10 +126,13 @@
         height: 65px;
         font-size: 12px;
         text-align: center;
-        &:before{
-          content: '';
+        cursor: pointer;
+        transition: all .3s;
+        &:hover{
+          box-shadow: 0 0 5px 5px rgba(0,0,0,.08);
+        }
+        >img{
           display: block;
-          background: url("../assets/minecraft.svg") no-repeat 100% 100%;
           object-fit: contain;
           width: 30px;
           height: 30px;
