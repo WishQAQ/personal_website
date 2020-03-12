@@ -5,7 +5,7 @@
     <div class="nav_right_box">
       <!-- 简历 -->
       <el-tooltip class="item" effect="dark" content="个人简历" placement="bottom">
-        <div class="jump_button" @click="jumpResume()">Resume</div>
+        <div class="jump_button" @click="jumpNavPage('/resume',urlType)">Resume</div>
       </el-tooltip>
       <!-- 菜单盒子 -->
       <el-popover
@@ -14,14 +14,14 @@
         trigger="click">
           <div class="nav_menu_button" slot="reference"></div>
           <div class="nav_menu_list">
-            <div class="nav_box" @click="jumpNavPage()"><img src="../assets/minecraft.png" alt="">Minecraft</div>
-
-
+            <div class="nav_box" @click="jumpNavPage('/blog',urlType)"><img src="../assets/blogger.png" alt="">Blog</div>
+            <div class="nav_box" @click="jumpNavPage('/photos',urlType)"><img src="../assets/photos.png" alt="">Photos</div>
+<!--            <div class="nav_box" @click="jumpNavPage()"><img src="../assets/minecraft.png" alt="">Minecraft</div>-->
           </div>
       </el-popover>
       <!-- 联系按钮 -->
       <el-tooltip class="item" effect="dark" content="联系我" placement="bottom">
-        <div class="contact_button" @click="jumpResume()">Contact</div>
+        <div class="contact_button" @click="jumpNavPage('/contact',urlType)">Contact</div>
       </el-tooltip>
 
     </div>
@@ -31,23 +31,27 @@
 <script>
   export default {
     name: "Nav",
+    data(){
+      return {
+        urlType: 1
+      }
+    },
     methods:{
-      jumpResume(){  // 跳转简历页面
-        console.log('111');
-        this.$message({
-          message: '全力施工中，敬请期待',
-          iconClass: 'el-icon-truck',
-          duration: 1000
-        })
-      },
-
       /**
        * @Description: 详情盒子页面跳转
        * @author Wish
        * @date 2020/3/9
       */
-      jumpNavPage(){
-        this.$router.push('/minecraft')
+      jumpNavPage(val,type){
+        if(type === 1){
+          this.$message({
+            message: '全力施工中，敬请期待',
+            iconClass: 'el-icon-truck',
+            duration: 1000
+          })
+        }else {
+          this.$router.push(val)
+        }
       },
     }
   }
@@ -114,9 +118,6 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      &:not(:nth-child(3n)){
-        margin-right: 10px;
-      }
       .nav_box{
         display: flex;
         align-items: center;

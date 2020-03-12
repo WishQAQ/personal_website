@@ -3,7 +3,7 @@
     <div class="footer_left">
       <div @click="jumpResume()" class="jump_button footer_contact">Contact</div>
       <a class="footer_record_number" href="http://www.beian.miit.gov.cn/" target="_blank">
-        ICP备案号
+        渝ICP备20001917
       </a>
     </div>
     <div class="footer_right">
