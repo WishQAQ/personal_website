@@ -14,9 +14,8 @@
         trigger="click">
           <div class="nav_menu_button" slot="reference"></div>
           <div class="nav_menu_list">
-            <div class="nav_box" @click="jumpNavPage('/blog',urlType)"><img src="../assets/blogger.png" alt="">Blog</div>
+            <div class="nav_box" @click="jumpNavPage('/blog',urlType)"><img src="../assets/blogger.png" alt="">Blogger</div>
             <div class="nav_box" @click="jumpNavPage('/photos',urlType)"><img src="../assets/photos.png" alt="">Photos</div>
-<!--            <div class="nav_box" @click="jumpNavPage()"><img src="../assets/minecraft.png" alt="">Minecraft</div>-->
           </div>
       </el-popover>
       <!-- 联系按钮 -->
