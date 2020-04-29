@@ -5,7 +5,7 @@
     <div class="nav_right_box">
       <!-- 简历 -->
       <el-tooltip class="item" effect="dark" content="个人简历" placement="bottom">
-        <div class="jump_button" @click="jumpNavPage('/resume',urlType)">Resume</div>
+        <div class="jump_button" @click="jumpNavUrl('/resume',urlType)">Resume</div>
       </el-tooltip>
       <!-- 菜单盒子 -->
       <el-popover
@@ -14,13 +14,18 @@
         trigger="click">
           <div class="nav_menu_button" slot="reference"></div>
           <div class="nav_menu_list">
-            <div class="nav_box" @click="jumpNavPage('/blog',urlType)"><img src="../assets/blogger.png" alt="">Blogger</div>
-            <div class="nav_box" @click="jumpNavPage('/photos',urlType)"><img src="../assets/photos.png" alt="">Photos</div>
+            <div :class="['nav_box',{'construction': item.status === 1}]"
+                 v-for="(item, index) in urlList"
+                 :key="index"
+                 @click="jumpNavPage(item.url,item.status,item.type)">
+              <img :src="item.icon" alt="">
+              {{item.name}}
+            </div>
           </div>
       </el-popover>
       <!-- 联系按钮 -->
       <el-tooltip class="item" effect="dark" content="联系我" placement="bottom">
-        <div class="contact_button" @click="jumpNavPage('/contact',urlType)">Contact</div>
+        <div class="contact_button" @click="jumpNavUrl('/contact',urlType)">Contact</div>
       </el-tooltip>
 
     </div>
@@ -32,7 +37,26 @@
     name: "Nav",
     data(){
       return {
-        urlType: 1
+        urlType: 1,  // 跳转链接状态
+        urlList: [{  // 链接列表
+          name: 'Blogger',  // 名称
+          url: '/blog',  // 地址
+          status: 1,  // 状态 0正常 1施工中
+          type: 1,  // 0内链 1外链
+          icon: require('../assets/blogger.png'),  // 图标
+        },{
+          name: 'Photos',
+          url: '/photos',
+          status: 1,
+          type: 1,
+          icon: require('../assets/photos.png'),
+        },{  // 链接列表
+          name: 'GitHub',
+          url: 'https://github.com/WishQAQ',
+          status: 0,
+          type: 1,
+          icon: require('../assets/github.png'),
+        }]
       }
     },
     methods:{
@@ -41,7 +65,28 @@
        * @author Wish
        * @date 2020/3/9
       */
-      jumpNavPage(val,type){
+      jumpNavPage(val,status,type){
+        if(status === 1){
+          this.$message({
+            message: '全力施工中，敬请期待',
+            iconClass: 'el-icon-truck',
+            duration: 1000
+          })
+        }else {
+          if(type === 0){
+            this.$router.push(val)
+          }else {
+            window.open(val)
+          }
+        }
+      },
+
+      /**
+       * @Description: 导航栏链接跳转
+       * @author Wish
+       * @date 2020/4/29
+      */
+      jumpNavUrl(val,type){
         if(type === 1){
           this.$message({
             message: '全力施工中，敬请期待',
@@ -130,6 +175,23 @@
         transition: all .3s;
         &:hover{
           box-shadow: 0 0 5px 5px rgba(0,0,0,.08);
+          position: relative;
+          z-index: 1;
+        }
+        &.construction{
+          position: relative;
+          &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("../assets/construction.png") no-repeat rgba(255,255,255,.8) 5px 5px;
+            background-size: 30%;
+            cursor: no-drop;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
         >img{
           display: block;
