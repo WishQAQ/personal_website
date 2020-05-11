@@ -61,8 +61,9 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding-top: 6.25rem;
+    justify-content: center;
     flex-direction: column;
+    padding-bottom: 20vh;
     .logo{
       width: 18.75rem;
       object-fit: contain;
