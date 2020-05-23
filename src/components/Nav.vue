@@ -40,7 +40,7 @@
         urlType: 1,  // 跳转链接状态
         urlList: [{  // 链接列表
           name: 'Blogger',  // 名称
-          url: 'https://hellowish.wujunlong.icu/',  // 地址
+          url: 'http://hellowish.wujunlong.icu/',  // 地址
           status: 0,  // 状态 0正常 1施工中
           type: 1,  // 0内链 1外链
           icon: require('../assets/blogger.png'),  // 图标

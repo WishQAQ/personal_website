@@ -39,7 +39,7 @@
         eraseTextTime: 200, // 擦除文字时间
         enterTextTime: 1000, // 首字符输入延迟
         // eraseType: 'backspace', // 擦除文字状态
-        textTime: 130, // 输入单个字符延迟
+        textTime: 80, // 输入单个字符延迟
       }
     },
     methods:{
